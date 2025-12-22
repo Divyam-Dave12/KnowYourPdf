@@ -163,3 +163,124 @@
   color: var(--text-secondary);
   margin-top: 10px;
 }
+
+/* --- New Chat Button --- */
+.new-chat-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.new-chat-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-divider {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 20px 0;
+}
+
+/* --- Markdown Styling --- */
+/* This makes the lists and paragraphs from the AI look clean */
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.markdown-body li {
+  margin-bottom: 5px;
+}
+
+.markdown-body strong {
+  color: #fff; /* Make bold text pop */
+  font-weight: 600;
+}
+
+/* Code block styling */
+.markdown-body pre {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  color: #0f0; /* Simple green terminal text */
+  font-family: 'Courier New', Courier, monospace;
+}
+/* Update Sidebar */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  /* ... existing styles ... */
+}
+
+/* Rounded Buttons */
+.upload-btn, .new-chat-btn, .input-wrapper input, .input-wrapper button {
+  border-radius: var(--btn-radius);
+}
+
+/* Refined Chat Bubbles */
+.message-row {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.bot-bg {
+  background-color: var(--chat-box-bot);
+}
+.user-bg {
+  background-color: transparent;
+}
+
+/* History List Items */
+.history-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.history-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.history-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-weight: bold;
+}
+
+.upload-btn, .new-chat-btn {
+  background-color: var(--chat-box-bot); /* Matches the theme better */
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  /* ... keep other settings like radius/padding ... */
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover, .new-chat-btn:hover {
+  background-color: var(--input-bg);
+  border-color: var(--accent-color); /* Adds a subtle blue highlight on hover */
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); /* Soft glow */
+}
+
+.history-item.active {
+  background-color: var(--input-bg);
+  color: var(--accent-color); /* Highlight text in bright blue */
+  border-left: 3px solid var(--accent-color); /* Indicator line */
+}

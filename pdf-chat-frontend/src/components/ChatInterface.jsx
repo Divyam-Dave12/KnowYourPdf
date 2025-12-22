@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { FaPaperPlane, FaRobot, FaUser } from "react-icons/fa";
+import ReactMarkdown from "react-markdown"; // Import the markdown renderer
 
 const ChatInterface = ({ messages, isLoading, input, setInput, handleSend }) => {
-  // Auto-scroll logic inside the chat component
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -10,6 +10,14 @@ const ChatInterface = ({ messages, isLoading, input, setInput, handleSend }) => 
   };
 
   useEffect(scrollToBottom, [messages]);
+
+  // Handle Enter to send, Shift+Enter for new line
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
 
   return (
     <div className="chat-area">
@@ -20,7 +28,10 @@ const ChatInterface = ({ messages, isLoading, input, setInput, handleSend }) => 
               <div className="avatar">
                 {msg.role === "bot" ? <FaRobot /> : <FaUser />}
               </div>
-              <div className="text-bubble">{msg.text}</div>
+              {/* Use ReactMarkdown to render the text */}
+              <div className="text-bubble markdown-body">
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
+              </div>
             </div>
           </div>
         ))}
@@ -36,14 +47,13 @@ const ChatInterface = ({ messages, isLoading, input, setInput, handleSend }) => 
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
       <div className="input-container">
         <div className="input-wrapper">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            onKeyDown={handleKeyDown} 
             placeholder="Send a message..."
             disabled={isLoading}
           />

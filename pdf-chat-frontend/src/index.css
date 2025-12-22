@@ -1,20 +1,38 @@
 :root {
-  --bg-color: #343541;          /* Main background */
-  --chat-box-bot: #444654;      /* Lighter grey for AI response */
-  --input-bg: #40414f;          /* Input field background */
-  --text-primary: #ececf1;      /* Main text color */
-  --text-secondary: #c5c5d2;    /* Subtitle/icon color */
-  --sidebar-bg: #202123;        /* Dark sidebar color */
-  --border-color: #565869;
+  /* --- Modern Midnight Navy Palette --- */
+  
+  /* Main background (The chat area) */
+  --bg-color: #0f172a;          /* Deep Slate Navy - sleek and modern */
+  
+  /* Sidebar background (Slightly darker for contrast) */
+  --sidebar-bg: #020617;        /* Almost black-blue */
+  
+  /* Bot Message Bubble */
+  --chat-box-bot: #1e293b;      /* Lighter slate blue to stand out */
+  
+  /* Input Field & Buttons */
+  --input-bg: #334155;          /* Muted blue-grey for inputs */
+  --border-color: #475569;      /* Subtle border color */
+  
+  /* Text Colors */
+  --text-primary: #f8fafc;      /* Off-white (easier on eyes than pure white) */
+  --text-secondary: #94a3b8;    /* Muted blue-grey text */
+  
+  /* Accents */
+  --accent-color: #38bdf8;      /* Bright sky blue for icons/highlights */
+  
+  /* UI Shapes */
+  --btn-radius: 12px;           /* Clean, modern rounded corners */
 }
 
 body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   display: flex;
+  overflow: hidden; /* Prevents double scrollbars */
 }
 
 #root {
@@ -23,7 +41,7 @@ body {
   display: flex;
 }
 
-/* Scrollbar styling for that sleek look */
+/* --- Sleek Scrollbar Styling --- */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -31,6 +49,9 @@ body {
   background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: #565869;
+  background: var(--input-bg);
   border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color);
 }
