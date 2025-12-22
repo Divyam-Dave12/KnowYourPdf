@@ -1,0 +1,36 @@
+:root {
+  --bg-color: #343541;          /* Main background */
+  --chat-box-bot: #444654;      /* Lighter grey for AI response */
+  --input-bg: #40414f;          /* Input field background */
+  --text-primary: #ececf1;      /* Main text color */
+  --text-secondary: #c5c5d2;    /* Subtitle/icon color */
+  --sidebar-bg: #202123;        /* Dark sidebar color */
+  --border-color: #565869;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Scrollbar styling for that sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #565869;
+  border-radius: 4px;
+}

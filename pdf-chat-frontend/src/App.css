@@ -1,0 +1,165 @@
+/* Layout Containers */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: #2A2B32;
+}
+
+.file-name {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  word-break: break-all;
+}
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 150px; /* Space for input box */
+}
+
+/* Message Rows */
+.message-row {
+  width: 100%;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.bot-bg {
+  background-color: var(--chat-box-bot);
+}
+
+.user-bg {
+  background-color: transparent;
+}
+
+.message-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+
+.bot-bg .avatar {
+  background-color: #19c37d; /* OpenAI Green */
+  color: white;
+}
+
+.user-bg .avatar {
+  background-color: #5436DA; /* User Blue */
+  color: white;
+}
+
+.text-bubble {
+  padding-top: 2px;
+  line-height: 1.6;
+}
+
+/* Input Area */
+.input-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(53,53,65,0), #353541 50%);
+  padding: 20px 0 40px;
+}
+
+.input-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid rgba(0,0,0,0.2);
+  color: white;
+  padding: 14px 45px 14px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.input-wrapper button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.input-wrapper button:hover {
+  color: white;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
