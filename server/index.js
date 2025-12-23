@@ -149,5 +149,19 @@ app.post('/api/ask', async (req, res) => {
     }
 });
 
+app.put('/api/history/:id', async (req, res) => {
+    try {
+        const { title } = req.body;
+        const chat = await ChatSession.findByIdAndUpdate(
+            req.params.id, 
+            { title }, 
+            { new: true }
+        );
+        res.json(chat);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to update title" });
+    }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Node Server running on port ${PORT}`));
