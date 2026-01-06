@@ -26,3 +26,25 @@
 ```bash
 git clone [https://github.com/yourusername/KnowYourPdf.git](https://github.com/yourusername/KnowYourPdf.git)
 cd KnowYourPdf
+2. Backend Setup
+Bash
+
+cd backend
+pip install -r requirements.txt
+# Set up your .env file with API keys
+uvicorn main:app --reload
+3. Frontend Setup
+Bash
+
+cd frontend
+npm install
+npm start
+🔮 Future Improvements
+Add support for multiple document formats (Docx, Txt).
+
+Implement user authentication and chat history storage.
+
+Optimize vector retrieval latency.
+
+🤝 Contribution
+Contributions are welcome! Please fork the repository and submit a pull request.
